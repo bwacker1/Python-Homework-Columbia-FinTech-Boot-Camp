@@ -6,8 +6,6 @@ month_count = 0
 total_pnl = 0
 pnl_list = []
 date_list = []
-profit_increase = ''
-profit_decrease = ''
 
 # opening csv file to be read
 with open(csvpath, 'r') as csvfile:
