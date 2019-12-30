@@ -1,3 +1,7 @@
+# import libraries
+from pathlib import Path
+import csv
+
 # setting path for csv file
 csvpath = Path('../../../CU-NYC-FIN-PT-12-2019-U-C/Homework/02-Python/Instructions/PyBank/Resources/budget_data.csv')
 
@@ -54,7 +58,7 @@ with open(csvpath, 'r') as csvfile:
         sum_of_changes += int(value)
     
     # calculating average change
-    average_change = float(sum_of_changes) / len(pnl_change_list)
+    average_change = sum_of_changes / len(pnl_change_list)
     
     # creating a dictionary to associate the list of dates and list of pnl changes
     dates_and_pnl = {date_list[i] : pnl_change_list[i] for i in range(len(date_list))}
