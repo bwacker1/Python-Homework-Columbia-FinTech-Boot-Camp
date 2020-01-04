@@ -58,7 +58,7 @@ with open(csvpath, 'r') as csvfile:
         sum_of_changes += int(value)
     
     # calculating average change
-    average_change = sum_of_changes / len(pnl_change_list)
+    average_change = round((sum_of_changes / len(pnl_change_list)),2)
 
     # creating a dictionary to associate the list of dates and list of pnl changes
     dates_and_pnl = {date_list[i] : pnl_change_list[i] for i in range(len(date_list))}
@@ -95,9 +95,9 @@ print('Financial Analysis' + '\n'
 '----------------------------' + '\n'
 f'Total Months: {month_count}' + '\n'
 f'Total: ${total_pnl}' + '\n'
-f'Average  Change: ${average_change}' + '\n')
+f'Average  Change: ${average_change}')
 for date, value in dates_and_pnl.items():
     if value == max_profit:
-        print(f'Greatest Increase in Profits: {date} (${value})' + '\n')
+        print(f'Greatest Increase in Profits: {date} (${value})')
     if value == max_loss:
         print(f'Greatest Decrease in Profits: {date} (${value})')
