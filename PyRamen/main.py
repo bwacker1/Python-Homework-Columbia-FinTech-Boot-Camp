@@ -19,6 +19,8 @@ with open(menu_csvpath, 'r') as csvfile:
     
     # initializing lists for each column in the csv file
     item_list = []
+    category_list =[]
+    description_list = []
     price_list = []
     cost_list = []
     
@@ -27,16 +29,22 @@ with open(menu_csvpath, 'r') as csvfile:
         
         # setting varibles for items in each row
         item = row[0]
+        category = row[1]
+        description = row[2]
         price = float(row[3])
         cost = float(row[4])
 
         # appending the items in each column to a corresponding list
         item_list.append(item)
+        category_list.append(category)
+        description_list.append(description)
         price_list.append(price)
         cost_list.append(cost)
         
     # appending lists to create menu list of lists
     menu.append(item_list)
+    menu.append(category_list)
+    menu.append(description_list)
     menu.append(price_list)
     menu.append(cost_list)
 
@@ -54,6 +62,9 @@ with open(sales_csvpath, 'r') as csvfile:
     csv_header = next(csvreader)
     
     # initializing lists for each column in the csv file
+    line_item_list =[]
+    date_list =[]
+    card_number_list =[]
     quantity_list = []
     sales_item_list = []
     
@@ -61,14 +72,23 @@ with open(sales_csvpath, 'r') as csvfile:
     for row in csvreader:
         
         # setting varibles for items in each row
+        line_item = row[0]
+        date = row[1]
+        card_number = row[2]
         quantity = int(row[3])
         sales_item = row[4]
         
         # appending the items in each column to a corresponding list
+        line_item_list.append(line_item)
+        date_list.append(date)
+        card_number_list.append(card_number)
         quantity_list.append(quantity)
         sales_item_list.append(sales_item)
     
     # appending lists to create sales list of lists
+    sales_list.append(line_item_list)
+    sales_list.append(date_list)
+    sales_list.append(card_number_list)
     sales_list.append(quantity_list)
     sales_list.append(sales_item_list)
 
