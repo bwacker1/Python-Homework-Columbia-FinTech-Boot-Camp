@@ -1,4 +1,4 @@
-# import libraries
+# importing libraries
 from pathlib import Path
 import csv
 
@@ -83,7 +83,7 @@ with open(output, 'w') as file:
     '----------------------------' + '\n'
     f'Total Months: {month_count}' + '\n'
     f'Total: ${total_pnl}' + '\n'
-    f'Average  Change: ${average_change}' + '\n')
+    f'Average Change: ${average_change}' + '\n')
     for date, value in dates_and_pnl.items():
         if value == max_profit:
             file.write(f'Greatest Increase in Profits: {date} (${value})' + '\n')
